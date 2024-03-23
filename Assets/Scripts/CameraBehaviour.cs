@@ -10,7 +10,6 @@ public class CameraBehaviour : MonoBehaviour
         Target.GetComponent<Transform>().position = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.LookAt(Target.transform);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7101295098601390314}
   - component: {fileID: 1464623413385220116}
   m_Layer: 0
-  m_Name: LightObjective
+  m_Name: ObjectiveLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
