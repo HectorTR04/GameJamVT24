@@ -25,12 +25,10 @@ public class LightBehaviour : MonoBehaviour
         float distance = Vector3.Distance(Source.transform.position, Player.transform.position);
 
         float sourceIntensity = CalculateSourceIntensity(distance);
-        //if (distance < 10)
-        //{
-        //    float playerIntensity = CalculatePlayerIntensity(distance);
-        //    playerLight.intensity = playerIntensity;
-        //}
+        float playerIntensity = CalculatePlayerIntensity(distance);
+
         sourceLight.intensity = sourceIntensity;
+        playerLight.intensity = playerIntensity;
     }
 
     float CalculateSourceIntensity(float distance)
@@ -39,11 +37,11 @@ public class LightBehaviour : MonoBehaviour
 
         return intensity;
     }
-    //float CalculatePlayerIntensity(float distance)
-    //{
-    //    float intensity = maxPlayerIntensity * distance * distance;
-
-//    return intensity;
-//}
+    float CalculatePlayerIntensity(float distance)
+    {
+        float intensity = maxPlayerIntensity * distance * distance;
+        intensity = Mathf.Clamp(intensity, 0f, maxPlayerIntensity);
+        return intensity;
+    }
 
 }
