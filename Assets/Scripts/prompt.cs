@@ -26,8 +26,6 @@ public class prompt : MonoBehaviour
         rend.enabled = false;
     }
 
-    
-
     // Update is called once per frame
     void Update()
     {
@@ -41,12 +39,17 @@ public class prompt : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 interaction = true;
-                Debug.Log(interaction);
             }
         }
         else
         {
             Hide();
+        }
+
+        if(interaction && !npc.interactible())
+        {
+            interaction = false;
+            Debug.Log(interaction);
         }
     }
 
