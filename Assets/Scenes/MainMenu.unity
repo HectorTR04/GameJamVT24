@@ -443,7 +443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \tSpace..."
+  m_text: "Press \n     Space..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 598dc4c6aa05cc343b50a97b5fb6491c, type: 2}
   m_sharedMaterial: {fileID: 2774486244845569221, guid: 598dc4c6aa05cc343b50a97b5fb6491c,
