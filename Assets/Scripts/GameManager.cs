@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
         foreach (Objective objective in Objectives)
         {
             if (Vector3.Distance(Player.transform.position, objective.transform.position) < 5
-                /*and press spsace*/)
+                && Input.GetKeyDown(KeyCode.Space))
             {
                 objective.Activated = true;
             }
@@ -55,13 +56,13 @@ public class GameManager : MonoBehaviour
             if (ActivationOrder[i] != TrueOrder[i])
             {
                 Debug.Log("Activation order doesn't match the true order: Incorrect order.");
-                //player die
+                //SceneManager.LoadScene(2);
                 return;
             }
             if (ActivationOrder[i] == TrueOrder[i] && ActivationOrder.Count == TrueOrder.Count)
             {
                 Debug.Log("correct order");
-                //player win
+                //SceneManager.LoadScene(3);
             }
         }
     }
