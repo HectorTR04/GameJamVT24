@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject WorldBorder;
+    public BoxCollider _spawnArea;
+    private Bounds _bounds;
     public Objective[] Objectives;
     public GameObject Player;
     public List<LightType> ActivationOrder;
-    public List<LightType> TrueOrder;
+    public List<LightType> TrueOrder;    
+    
     void Start()
     {
+
         ActivationOrder = new List<LightType>();
         Objectives[0].ObjectiveType = LightType.Red;
         Objectives[1].ObjectiveType = LightType.Green;
@@ -32,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerActivateObjective();
         CheckActivationOrder();
+        CheckBorders();
     }
 
     void PlayerActivateObjective()
@@ -55,15 +61,25 @@ public class GameManager : MonoBehaviour
         {
             if (ActivationOrder[i] != TrueOrder[i])
             {
-                Debug.Log("Activation order doesn't match the true order: Incorrect order.");
                 SceneManager.LoadScene(2);
                 return;
             }
             if (ActivationOrder[i] == TrueOrder[i] && ActivationOrder.Count == TrueOrder.Count)
             {
-                Debug.Log("correct order");
                 SceneManager.LoadScene(3);
             }
+        }
+    }
+
+    void CheckBorders()
+    {
+        float distanceThreshold = 50f; 
+
+        float distanceFromOrigin = Vector3.Distance(Player.transform.position, Vector3.zero);
+
+        if (distanceFromOrigin > distanceThreshold)
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }
