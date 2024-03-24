@@ -15,6 +15,8 @@ public static class GlobalStrings
     public const string NPC_4_FALSE = "";
     public const string NPC_5_FALSE = "";
 
+    public const string LIGHTING = "GasLighting Expert \n HecticSwede";
+
 
 
 
