@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
-public class prompt : MonoBehaviour
+public class Prompt : MonoBehaviour
 {
     public Renderer rend;
     public NPC npc;
-    bool interaction;
+    public bool interaction;
+    public int npcIndex;
+   
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<Renderer>();
+       
         rend.enabled = true;
         Hide();
     }
@@ -49,11 +53,10 @@ public class prompt : MonoBehaviour
         if(interaction && !npc.interactible())
         {
             interaction = false;
-            Debug.Log(interaction);
         }
     }
 
     
 
-        
+
 }

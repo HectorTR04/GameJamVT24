@@ -5,19 +5,27 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public Vector3 NPCposition;
-    public GameObject Player;
     bool canInteract;
+    public Prompt p1;
+    public Dialogue dia;
+    public bool alreadyInteracted;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
     void Update()
     {
+       if(p1.interaction && !alreadyInteracted && !dia.typing)
+        {
+            dia.startDialogue();
+            alreadyInteracted = true;
+        }
+       
        
         
 
@@ -31,6 +39,8 @@ public class NPC : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canInteract = false;
+        alreadyInteracted = false;
+        p1.interaction = false;
     }
 
     public bool interactible()
