@@ -6,12 +6,12 @@ public class Objective : MonoBehaviour
     public LightType ObjectiveType { get; set; }
     [SerializeField] Material material1;
     [SerializeField] Material material2;
-    Renderer rend;
+    MeshRenderer rend;
 
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponent<MeshRenderer>();
         rend.material = material1;
     }
 

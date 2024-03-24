@@ -56,13 +56,13 @@ public class GameManager : MonoBehaviour
             if (ActivationOrder[i] != TrueOrder[i])
             {
                 Debug.Log("Activation order doesn't match the true order: Incorrect order.");
-                //SceneManager.LoadScene(2);
+                SceneManager.LoadScene(2);
                 return;
             }
             if (ActivationOrder[i] == TrueOrder[i] && ActivationOrder.Count == TrueOrder.Count)
             {
                 Debug.Log("correct order");
-                //SceneManager.LoadScene(3);
+                SceneManager.LoadScene(3);
             }
         }
     }

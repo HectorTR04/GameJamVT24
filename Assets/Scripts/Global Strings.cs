@@ -16,6 +16,9 @@ public static class GlobalStrings
     public const string NPC_5_FALSE = "";
 
     public const string LIGHTING = "GasLighting Expert \n HecticSwede";
+    public const string SHAKESPEARE = "Professional Shakespearian \n quechingon ";
+    public const string ANIMATION = "Qualified Animator \n HecticSwede";
+    public const string PROGRAMMING = "Programming (allegedly) \n HecticSwede & quechingon";
 
 
 
